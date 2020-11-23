@@ -1,12 +1,13 @@
-package com.myregion;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.myregion.activitys;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
-public class SearchActivity extends AppCompatActivity {
+import com.myregion.R;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

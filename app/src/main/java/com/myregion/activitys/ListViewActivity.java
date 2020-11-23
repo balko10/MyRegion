@@ -1,6 +1,8 @@
-package com.myregion;
+package com.myregion.activitys;
 
 import android.os.Bundle;
+
+import com.myregion.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 
