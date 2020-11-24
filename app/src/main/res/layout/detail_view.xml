@@ -1,7 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activitys.SearchActivity"/>
+<ScrollView android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/storeDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="8dp"
+            android:layout_marginBottom="4dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/storeHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/card_header_background"
+                    android:padding="4dp"
+                    android:text="StoreTextView"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/storeHeaderImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@+id/storeHeader"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/card_background"
+                    android:contentDescription="@string/detail_store_header_image_desc_string"
+                    card_view:srcCompat="@drawable/bauernhaus" />
+
+                <TextView
+                    android:id="@+id/storeDescHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/storeHeaderImage"
+                    android:layout_marginTop="0dp"
+
+                    android:background="@color/card_background"
+                    android:padding="4dp"
+                    android:text="@string/detail_store_desc_header"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/storeDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/storeDescHeader"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/card_background"
+                    android:padding="4dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="4dp"
+                    android:text="Wir sind ein kleines Familienunternehmen, das sich seit Generationen auf das Backen von Brot mit unseren hauseigenen Eiern spezialisiert hat. Bei uns bekommen sie Eier, Brot und auch Milch die frischer nicht sein könnten. Des Weiteren werden unsere Tiere mit dem besten Versorgt, das unser Feld zu bieten hat."
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@id/storeDesc"
+                    android:baselineAligned="false">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:orientation="vertical" >
+                        <TextView
+                            android:id="@+id/openingHourHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:padding="4dp"
+                            android:text="@string/detail_opening_hours_header"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/monday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="4dp"
+                            android:text="Mo: 08:00 - 16:00"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:id="@+id/tuesday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="4dp"
+                            android:text="Di:   08:00 - 16:00"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:id="@+id/wednesday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="4dp"
+                            android:text="Mi:  08:00 - 16:00"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:id="@+id/thursday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="4dp"
+                            android:text="Do:  08:00 - 16:00"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:id="@+id/friday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="4dp"
+                            android:text="Fr:   08:00 - 16:00"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:id="@+id/saturday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="4dp"
+                            android:text="Sa:  08:00 - 16:00"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"/>
+                        <TextView
+                            android:id="@+id/sunday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="4dp"
+                            android:text="So:  08:00 - 16:00"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.7"
+                        android:orientation="vertical"
+                        android:background="@color/card_background">
+                        <TextView
+                            android:id="@+id/contactHeader"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:padding="4dp"
+                            android:text="@string/detail_contact_header"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="4dp"
+                            android:text="Email: textView@myRegion.com"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:autoLink="email"/>
+                        <TextView
+                            android:id="@+id/phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="4dp"
+                            android:text="Tel:     +4306641256800"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:autoLink="phone"/>
+                        <TextView
+                            android:id="@+id/web"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="4dp"
+                            android:text="Web:  www.google.com"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:autoLink="web"/>
+                        <TextView
+                            android:id="@+id/address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:background="@color/card_background"
+                            android:paddingStart="15dp"
+                            android:paddingEnd="4dp"
+                            android:text="Adresse:  Olympiastraße 17, Innsbruck"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:autoLink="map"/>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/productDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            card_view:cardCornerRadius="8dp"
+            android:layout_marginBottom="4dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/productHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/card_header_background"
+                    android:padding="4dp"
+                    android:text="ProduktTextView"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/productHeaderImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_below="@+id/productHeader"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/card_background"
+                    android:contentDescription="@string/detail_product_header_image_desc_string"
+                    card_view:srcCompat="@drawable/brot" />
+
+                <TextView
+                    android:id="@+id/productDescHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/productHeaderImage"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/card_background"
+                    android:padding="4dp"
+                    android:text="@string/detail_product_desc_header"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/productDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/productDescHeader"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/card_background"
+                    android:padding="4dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="4dp"
+                    android:text="Unser Hausgemachtes Brot wird nach einem alten Familienrezept mit den frischesten Zutaten unseres Hofes jeden Tag frisch in einem Steinofen zubereitet."
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

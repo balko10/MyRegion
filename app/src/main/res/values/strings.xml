@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">MyRegion</string>
     <string name="login_button">Login</string>
+    <string name="detail_store_header_image_desc_string">Geschäft Beispielbild</string>
+    <string name="detail_store_desc_header">Über das Geschäft:</string>
+    <string name="detail_opening_hours_header">Öffnungszeiten:</string>
+    <string name="detail_contact_header">Sie erreichen uns unter:</string>
+    <string name="detail_product_header_image_desc_string">Produkt Beispielbild</string>
+    <string name="detail_product_desc_header">Über das Produkt:</string>
 </resources>
