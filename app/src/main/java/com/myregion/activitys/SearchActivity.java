@@ -2,19 +2,25 @@ package com.myregion.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.SearchView;
 
 import com.myregion.R;
 
-public class SearchActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+
+    SearchView editsearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.search);
-        setContentView(R.layout.detail_view);
+        setContentView(R.layout.search_view);
+
+        editsearch = (SearchView) findViewById(R.id.search);
+        editsearch.setOnQueryTextListener(this);
     }
 
 
@@ -26,5 +32,20 @@ public class SearchActivity extends AppCompatActivity {
 
         }
     };
+
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        if (query != null && !query.equals("")) {
+            Intent intent = new Intent(this, ListViewActivity.class);
+            intent.putExtra("search_parameter", query);
+            startActivity(intent);
+        }
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        return false;
+    }
 
 }
