@@ -5,4 +5,5 @@ package com.myregion.util;
  */
 
 public class ConstantUtil {
+    public static String PARAMETER_SEARCH_STRING =  "search_string";
 }

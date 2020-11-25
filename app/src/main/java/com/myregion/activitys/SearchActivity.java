@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.SearchView;
 
 import com.myregion.R;
+import com.myregion.util.ConstantUtil;
 
 public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
@@ -37,7 +38,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
     public boolean onQueryTextSubmit(String query) {
         if (query != null && !query.equals("")) {
             Intent intent = new Intent(this, ListViewActivity.class);
-            intent.putExtra("search_parameter", query);
+            intent.putExtra(ConstantUtil.PARAMETER_SEARCH_STRING, query);
             startActivity(intent);
         }
         return false;
