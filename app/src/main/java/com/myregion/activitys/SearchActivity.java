@@ -24,13 +24,9 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         editsearch.setOnQueryTextListener(this);
     }
 
-
-
     final View.OnClickListener loginHandler = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
-
         }
     };
 
