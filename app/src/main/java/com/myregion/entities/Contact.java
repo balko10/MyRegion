@@ -8,9 +8,13 @@ public class Contact {
 
     private Long id;
 
-    private Long telephone;
+    private String telephone;
 
     private String email;
+
+    private String web;
+
+    private String address;
 
     private OpeningHour openingHour;
 
@@ -22,11 +26,11 @@ public class Contact {
         this.id = id;
     }
 
-    public Long getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(Long telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 
@@ -44,5 +48,21 @@ public class Contact {
 
     public void setOpeningHour(OpeningHour openingHour) {
         this.openingHour = openingHour;
+    }
+
+    public String getWeb() {
+        return web;
+    }
+
+    public void setWeb(String web) {
+        this.web = web;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
