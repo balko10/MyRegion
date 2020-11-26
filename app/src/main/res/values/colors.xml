@@ -9,4 +9,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="card_background">#989595</color>
     <color name="card_header_background">#4d4f52</color>
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#DADCE0</color>
+    <color name="colorAccent">#E0E0E0</color>
+    <color name="toolbarIconColor">#FFFFFF</color>
+    <color name="loginPageBackgroundColor">#FFFFFF</color>
+    <color name="productGridBackgroundColor">#FFFFFF</color>
 </resources>

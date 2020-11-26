@@ -20,8 +20,8 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         //setContentView(R.layout.search);
         setContentView(R.layout.search_view);
 
-        editsearch = (SearchView) findViewById(R.id.search);
-        editsearch.setOnQueryTextListener(this);
+        //editsearch = (SearchView) findViewById(R.id.search);
+        //editsearch.setOnQueryTextListener(this);
     }
 
 
@@ -37,9 +37,7 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
     @Override
     public boolean onQueryTextSubmit(String query) {
         if (query != null && !query.equals("")) {
-            Intent intent = new Intent(this, ListViewActivity.class);
-            intent.putExtra(ConstantUtil.PARAMETER_SEARCH_STRING, query);
-            startActivity(intent);
+            // TODO implement me
         }
         return false;
     }

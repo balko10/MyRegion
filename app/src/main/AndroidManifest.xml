@@ -17,15 +17,9 @@
         </activity>
 
         <activity
-            android:name=".activitys.ListViewActivity"
-            android:label="List"
-            android:parentActivityName=".activitys.SearchActivity"
-        />
-
-        <activity
             android:name=".activitys.DetailActivity"
             android:label="Detail"
-            android:parentActivityName=".activitys.ListViewActivity"
+            android:parentActivityName=".activitys.SearchActivity"
         />
     </application>
 
