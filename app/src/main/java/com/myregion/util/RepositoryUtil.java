@@ -21,7 +21,7 @@ import androidx.annotation.NonNull;
 
 public class RepositoryUtil<T> {
 
-    Boolean receivedAnswer = false;
+    private final String logTag = "RepositoryUtil";
 
     public void insertObject(String tag, T object) {
         RepositoryConstants.db.collection(tag)
@@ -29,13 +29,13 @@ public class RepositoryUtil<T> {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Log.d("Repository Util", "inserted succeccfully");
+                        Log.d(logTag, "inserted data successfully with tag " + tag);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e("Repository Util", "insert failed");
+                        Log.e(logTag, "insert failed");
                     }
                 });
     }
@@ -55,8 +55,16 @@ public class RepositoryUtil<T> {
                                 resultList.add(document.toObject(toCast));
                             }
                             callback.onListCallback(resultList);
+                            Log.d(logTag, "received data (" + resultList.size() + " elements)");
                         }
 
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        callback.onListCallback(null);
+                        Log.e("Repository Util", "Failed to load data for tag: " + tag + " and class: " + toCast.getName());
                     }
                 });
     }
