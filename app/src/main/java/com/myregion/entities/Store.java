@@ -6,6 +6,8 @@ package com.myregion.entities;
 
 public class Store {
 
+    public static String tag = "stores";
+
     private Long id;
 
     private String name;
