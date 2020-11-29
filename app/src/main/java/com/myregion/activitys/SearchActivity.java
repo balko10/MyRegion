@@ -1,6 +1,5 @@
 package com.myregion.activitys;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,17 +8,15 @@ import android.view.View;
 import android.widget.SearchView;
 
 
-import com.google.android.gms.tasks.OnCompleteListener;
-
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 import com.myregion.R;
 import com.myregion.entities.Contact;
 import com.myregion.entities.OpeningHour;
 import com.myregion.entities.Store;
+import com.myregion.util.RepositoryListCallback;
 import com.myregion.util.RepositoryConstants;
 import com.myregion.util.RepositoryUtil;
+
+import java.util.List;
 
 
 public class SearchActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
@@ -38,12 +35,10 @@ public class SearchActivity extends AppCompatActivity implements SearchView.OnQu
         Store store = testData();
 
         RepositoryUtil<Store> rep = new RepositoryUtil<>();
-        //rep.insertObject(Store.tag, store);
-        //rep.getDataFromServer(Store.tag, Store.class);
-        rep.getAllObjects(Store.tag, Store.class);
-
-
-        // see here: https://www.youtube.com/watch?v=66PdLHIEu1c&list=PL6Q9UqV2Sf1hnV1bPMxyGbHMWrfbokPaW&index=4
+        rep.getAllObjects(Store.tag, Store.class, data -> {
+            // work with received data here
+            data.forEach(d -> Log.e("Callback", "name -> " + d.getName()));
+        });
     }
 
     public Store testData() {

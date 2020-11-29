@@ -6,12 +6,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.myregion.entities.Store;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,9 +40,7 @@ public class RepositoryUtil<T> {
                 });
     }
 
-    public List<T> getAllObjects(String tag, Class<T> toCast) {
-        List<T> resultList = new ArrayList<>();
-
+    public void getAllObjects(String tag, Class<T> toCast, RepositoryListCallback<T> callback) {
         RepositoryConstants.db.collection(tag)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -55,16 +50,15 @@ public class RepositoryUtil<T> {
                             if (task.getResult() == null) {
                                 return;
                             }
+                            List<T> resultList = new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 resultList.add(document.toObject(toCast));
-                                Log.e("Repository Util", document.getId() + "=> " + document.getData());
-                                Log.e("Repository Util", document.getId() + "=> " + document.toObject(toCast));
                             }
+                            callback.onListCallback(resultList);
                         }
-                        receivedAnswer = true;
+
                     }
                 });
-        return resultList;
     }
 
 }
